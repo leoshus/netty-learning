@@ -892,10 +892,10 @@
         </executions>
         <dependencies>
           <dependency>
-            <groupId>com.puppycrawl.tools</groupId>
-            <artifactId>checkstyle</artifactId>
-            <version>8.18</version>
-          </dependency>
+			 <groupId>com.puppycrawl.tools</groupId>
+			 <artifactId>checkstyle</artifactId>
+			 <version>[8.18,)</version>
+		  </dependency>
           <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>netty-build</artifactId>
