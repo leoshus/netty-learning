@@ -533,8 +533,9 @@ public int select(long timeout) throws IOException {
 
 private int lockAndDoSelect(long timeout) throws IOException {
     synchronized (this) {
-        if (!isOpen())
+        if (!isOpen())//检查Selector是否打开
             throw new ClosedSelectorException();
+       //双重锁
         synchronized (publicKeys) {
             synchronized (publicSelectedKeys) {
                 return doSelect(timeout);
@@ -744,8 +745,9 @@ Java_sun_nio_ch_WindowsSelectorImpl_setWakeupSocket0(JNIEnv *env, jclass this,
 
 
 
-
-
+参考资料
++ [a NIO 选择器(Selector) 知识预备 (linux epoll)](https://goldendoc.iteye.com/blog/1144310)
++ [nio Selector 堵塞 唤醒 原理](http://www.myexception.cn/program/1598318.html)
 
 
 
